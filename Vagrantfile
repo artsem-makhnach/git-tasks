@@ -12,14 +12,7 @@ Vagrant.configure("2") do |config|
 	vb.name="Jenkins Server"
 	end
         jen.vm.hostname = "jenkins"
-        jen.vm.provision 'shell', inline: <<-EOF
-	echo "Hello vagrant"
-	yum -y install java
-	yum -y install nginx
-	systemctl enable nginx
-	yum -y install java-1.8.0-openjdk-devel.x86_64
-	yum -y install git
-   EOF
+	jen.vm.provision "shell", path: "provision.sh"
    end
 
 ########################################################################

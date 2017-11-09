@@ -1,0 +1,24 @@
+#!/bin/bash
+
+export JENKINS_HOME=/opt/jenkins/master
+export JENKINS_DIR=/opt/jenkins/bin
+
+
+case "$1" in
+    start)
+        echo "Starting Jenkins"
+        su - jenkins -c "$(java -jar /opt/jenkins/bin/jenkins.war) &"
+   ;;
+    stop)
+        echo "Stopping Jenkins"
+        kill `ps -ef | grep [j]enkins.war | awk '{ print $2 }'`
+    ;;
+    *)
+        echo "Usage: jenkins {start|stop}"
+        exit 1
+    ;;
+esac
+
+exit 0
+
+

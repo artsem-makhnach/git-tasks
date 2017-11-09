@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
     sudo chown -R jenkins:jenkins /opt/jenkins
     sudo cp /vagrant/jenkins /etc/init.d/
     sudo service jenkins start
+    sudo echo "127.0.0.1 jenkins" >> /etc/hosts
     sudo yum install -y nginx
     sudo cp /vagrant/nginx.conf /etc/nginx/nginx.conf
     sudo start nginx 

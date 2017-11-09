@@ -23,6 +23,12 @@ chown -R  jenkins: /opt/jenkins
 chmod a+x /vagrant/*.sh
 
 cp /vagrant/jenkins /etc/init.d/
+
+chmod +x /etc/init.d/jenkins
+
+service jenkins start
+
+echo "Use this IP to connect: "$ip
  
 # create users permissions
 

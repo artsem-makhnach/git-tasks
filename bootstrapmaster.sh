@@ -18,7 +18,7 @@ mkdir /opt/jenkins/bin
 [ -f /vagrant/jenkins.war ] && cp /vagrant/jenkins.war /opt/jenkins/bin/ || wget -O /opt/jenkins/bin/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
  
-chown -R /opt/jenkins jenkins: 
+chown -R  jenkins: /opt/jenkins  
 
 chmod a+x /vagrant/*.sh
 

@@ -24,6 +24,9 @@ Vagrant.configure("2") do |config|
     sudo export JENKINS_DIR=/opt/jenkins/bin
     sudo cp /vagrant/jenkins.war /opt/jenkins/bin/jenkins.war
     sudo chown -R jenkins:jenkins /opt/jenkins
+    sudo yum install -y nginx
+    sudo start nginx
+    sudo cp /vagrant/nginx.conf /etc/nginx/nginx.conf
   EOF
   end
 

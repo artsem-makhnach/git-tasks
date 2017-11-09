@@ -4,12 +4,10 @@ $scriptServ= <<SCRIPT
 
 sudo yum -y install unzip vim net-tools htop java-devel epel-release git
 
-
-
 sudo yum -y install nginx
 
-sudo systemctl start nginx
-sudo systemctl enable nginx
+groupadd jenkins
+useradd jenkins -g jenkins -M
 
 wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 $(java -jar jenkins.war) & 
@@ -17,6 +15,9 @@ $(java -jar jenkins.war) &
 sudo echo -e "127.0.0.1	jenkins" >> /etc/hosts
 
 sudo sed -i '/^        location/a \ proxy_pass http://127.0.0.1:8080;' /etc/nginx/nginx.conf
+
+sudo systemctl start nginx
+sudo systemctl enable nginx
 
 
 SCRIPT

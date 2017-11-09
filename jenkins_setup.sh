@@ -30,7 +30,7 @@ cat > /etc/systemd/system/jenkins.service <<-EOF
 	[Service]
 	Environment=JENKINS_HOME=$JENKINS_HOME
 	Environment=JENKINS_DIR=$JENKINS_DIR
-	ExecStart=/usr/bin/java -jar /opt/jenkins/master/jenkins.war
+	ExecStart=/usr/bin/java -jar \$JENKINS_DIR/jenkins.war
 	User=jenkins
 	
 	[Install]

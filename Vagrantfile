@@ -20,8 +20,8 @@ Vagrant.configure("2") do |config|
     cd /opt/jenkins/bin
     wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
     sudo useradd jenkins
-    sudo export JENKINS_HOME=/opt/jenkins/master
-    sudo export JENKINS_DIR=/opt/jenkins/bin
+    sudo echo "JENKINS_HOME=/opt/jenkins/master" >> /etc/environment
+    sudo echo "JENKINS_DIR=/opt/jenkins/bin" >> /etc/environment
     sudo chown -R jenkins:jenkins /opt/jenkins
     sudo cp /vagrant/jenkins /etc/init.d/
     sudo service jenkins start

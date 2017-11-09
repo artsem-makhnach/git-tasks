@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     sudo useradd jenkins
     sudo export JENKINS_HOME=/opt/jenkins/master
     sudo export JENKINS_DIR=/opt/jenkins/bin
-
+    sudo chown -R jenkins:jenkins /opt/jenkins
   EOF
   end
 

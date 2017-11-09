@@ -15,8 +15,8 @@ Vagrant.configure(2) do |config|
     jnk.vm.provision 'shell', inline: <<-EOF
     echo "Machine Host-only adapter IP adress: $(nmcli d show enp0s8 | grep IP4.ADDRESS | tr -s " " | cut -d " " -f 2)"
     EOF
-    #jnk.vm.provision "shell", path: "java_setup.sh"
-    #jnk.vm.provision "shell", path: "nginx_setup.sh"
-    #jnk.vm.provision "shell", path: "jenkins_setup.sh" 
+    jnk.vm.provision "shell", path: "java_setup.sh"
+    jnk.vm.provision "shell", path: "nginx_setup.sh"
+    jnk.vm.provision "shell", path: "jenkins_setup.sh" 
   end
 end

@@ -16,7 +16,8 @@ Vagrant.configure("2") do |config|
     sudo yum -y install java-devel
     sudo yum -y install zip unzip 
     sudo yum -y install mlocate	    
-    
+    sudo mkdir "/opt/jenkins/"
+    sudo cd "/opt/jenkins/"
   EOF
   end
 

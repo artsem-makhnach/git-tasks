@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
     sudo yum -y install mlocate	    
     sudo mkdir "/opt/jenkins/"
     sudo cd "/opt/jenkins/"
+    sudo wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
   EOF
   end
 

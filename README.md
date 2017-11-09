@@ -1,16 +1,16 @@
 
-#Slowcats team
+# Slowcats team
 
-##Team members:
-###1. Aliaksandra Navitskaya;
-###2. Ihar Lahutka.
+## Team members:
+### 1. Aliaksandra Navitskaya;
+### 2. Ihar Lahutka.
 
-##Project:
-###Development of Vagrantfile and provisioning script of automated rolling out of Jenkins server.
+## Project:
+### Development of Vagrantfile and provisioning script of automated rolling out of Jenkins server.
 
-##Responsibility:
+## Responsibility:
 
-###Aliaksandra Navitskaya:
+### Aliaksandra Navitskaya:
 1. Responsibility list development;
 2. Github branch creating;
 3. Vagrantfile configuration:
@@ -18,7 +18,7 @@
  - Jenkins user changing, init script;
  - JENKINS_DIR setup.
  
-###Ihar Lahutka:
+### Ihar Lahutka:
 1. README.md changing;
 2.  Vagrantfile configuration:
  - Jenkins installation;

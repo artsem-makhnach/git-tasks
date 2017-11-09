@@ -16,8 +16,8 @@ Vagrant.configure("2") do |config|
     sudo yum -y install java-devel
     sudo yum -y install zip unzip 
     sudo yum -y install mlocate	    
-    sudo mkdir "/opt/jenkins/bin"
-    sudo cd "/opt/jenkins/bin"
+    sudo mkdir -p /opt/jenkins/bin
+    sudo cd /opt/jenkins/bin
     #sudo wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
     sudo useradd jenkins
     sudo export JENKINS_HOME=/opt/jenkins/master
@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
     sudo echo "127.0.0.1 jenkins" >> /etc/hosts
     sudo yum install -y nginx
     sudo cp /vagrant/nginx.conf /etc/nginx/nginx.conf
-    sudo start nginx 
+    sudo systemctl start nginx 
   EOF
   end
 

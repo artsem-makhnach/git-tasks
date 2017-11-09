@@ -12,9 +12,9 @@ sudo systemctl enable nginx
 wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 $(java -jar jenkins.war) & 
 
-sudo echo -e "192.168.33.11	jenkins" >> /etc/hosts
+#sudo echo -e "192.168.33.11	jenkins" >> /etc/hosts
 
-sudo sed -i.back '/^        location/a \ proxy_pass http://192.168.33.11:8080;' /etc/nginx/nginx.conf
+#sudo sed -i.back '/^        location/a \ proxy_pass http://192.168.33.11:8080;' /etc/nginx/nginx.conf
 
 
 SCRIPT
@@ -24,8 +24,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "jboss" do |jboss|
 		jboss.vm.box = "sbeliakou/centos-7.4-x86_64-minimal"
-		jboss.vm.network "private_network", ip: "192.168.33.11"
-		jboss.vm.network "private_network", ip: "192.168.33.12"
+		jboss.vm.network "private_network", type: "dhcp"
 		jboss.vm.provision "shell", inline: $scriptServ
 
 		jboss.vm.provider "virtualbox" do |v|

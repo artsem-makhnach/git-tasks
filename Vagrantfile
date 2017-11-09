@@ -20,6 +20,7 @@ Vagrant.configure("2") do |config|
      master.vm.network "private_network", type: "dhcp"
      master.vm.network :forwarded_port, guest: 8080, host: 8090, auto_correct: true
      master.vm.provision :shell, path: "bootstrapmaster.sh"
+     master.vm.provision :shell, path: "jenkins-useradd.sh"
      master.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", "4096"]
           end

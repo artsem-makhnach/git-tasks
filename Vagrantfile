@@ -20,6 +20,7 @@ Vagrant.configure("2") do |config|
     sudo cd "/opt/jenkins/"
     sudo wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
     sudo useradd jenkins
+    sudo chown -R jenkins:jenkins /opt/jenkins
   EOF
   end
 

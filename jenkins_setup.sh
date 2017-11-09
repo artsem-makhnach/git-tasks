@@ -6,7 +6,7 @@ yum -y install git > /dev/null 2>&1
 #Script for Installation and Configuration Jenkins
 mkdir -p /opt/jenkins/master
 mkdir -p /opt/jenkins/bin
-wget -qO /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+wget -qO /opt/jenkins/bin/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 useradd jenkins
 chown -R jenkins: /opt/jenkins/

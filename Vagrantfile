@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
     sudo yum -y install zip unzip 
     sudo yum -y install mlocate	    
     sudo mkdir -p /opt/jenkins/bin
-    sudo cd /opt/jenkins/bin
-    sudo wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+    cd /opt/jenkins/bin
+    wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
     sudo useradd jenkins
     sudo export JENKINS_HOME=/opt/jenkins/master
     sudo export JENKINS_DIR=/opt/jenkins/bin
